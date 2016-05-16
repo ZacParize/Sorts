@@ -27,13 +27,17 @@ public class CombSort {
     }
 
     public static void main(String[] args) {
-        Element[] arr = Sort.fill(10000, 10000);
+
+        //Element[] arr = Sort.fill(10000, 10000);
+        Element[] arr = Sort.fill(10, 10);
         Element[] arr1 = new Element[arr.length];
         Element[] arr2 = new Element[arr.length];
         Element[] arr3 = new Element[arr.length];
+        Element[] arr4 = new Element[arr.length];
         System.arraycopy(arr,0,arr1,0,arr.length);
         System.arraycopy(arr,0,arr2,0,arr.length);
         System.arraycopy(arr,0,arr3,0,arr.length);
+        System.arraycopy(arr,0,arr4,0,arr.length);
         long t1 = System.currentTimeMillis();
         CombSort.sort(arr1);
         long t2 = System.currentTimeMillis();
@@ -41,9 +45,12 @@ public class CombSort {
         long t3 = System.currentTimeMillis();
         SelectionSort.sort(arr3);
         long t4 = System.currentTimeMillis();
+        QuickSort.sort(arr4,0,arr.length - 1);
+        long t5 = System.currentTimeMillis();
         System.out.println("Elapsed time of comb sort = " + (t2-t1));
         System.out.println("Elapsed time of bubble sort = " + (t3-t2));
         System.out.println("Elapsed time of selection sort = " + (t4-t3));
+        System.out.println("Elapsed time of quick sort = " + (t5-t4));
     }
 
 }
