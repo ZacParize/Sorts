@@ -17,6 +17,15 @@ public class Sort {
         return arr;
     }
 
+    public static boolean checkOutAsc(Element[] arr) {
+        boolean result = true;
+        int i = 0;
+        while (result && (i < (arr.length - 1))) {
+            if (arr[i].compareTo(arr[++i]) < 0) result = false;
+        }
+        return result;
+    }
+
     public static void print(Element[] arr) {
         for (int i = 0; i < arr.length; i++) {
             if (i != (arr.length - 1)) {

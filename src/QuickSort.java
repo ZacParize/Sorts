@@ -84,7 +84,7 @@ public class QuickSort {
         QuickSort.sort(arr, cur + 1, end);
     }*/
 
-    public static <E extends Comparable<E>> int make(E[] arr, int left, int right) {
+    private static <E extends Comparable<E>> int make(E[] arr, int left, int right) {
         int i = left, j = right;
         E tmp;
         E pivot = arr[(left + right) / 2];
@@ -104,12 +104,16 @@ public class QuickSort {
         return i;
     }
 
-    public static <E extends Comparable<E>> void sort(E[] arr, int left, int right) {
+    private static <E extends Comparable<E>> void sort(E[] arr, int left, int right) {
         int index = make(arr, left, right);
         if (left < index - 1)
             sort(arr, left, index - 1);
         if (index < right)
             sort(arr, index, right);
+    }
+
+    public static <E extends Comparable<E>> void sort(E[] arr) {
+        sort(arr,0,arr.length - 1);
     }
 
 }
