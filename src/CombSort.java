@@ -36,6 +36,7 @@ public class CombSort {
         Element[] arr4 = new Element[arr.length];
         Element[] arr5 = new Element[arr.length];
         Element[] arr6 = new Element[arr.length];
+        Element[] arr7 = new Element[arr.length];
         long t0 = System.currentTimeMillis();
         System.arraycopy(arr,0,arr1,0,arr.length);
         System.arraycopy(arr,0,arr2,0,arr.length);
@@ -43,9 +44,10 @@ public class CombSort {
         System.arraycopy(arr,0,arr4,0,arr.length);
         System.arraycopy(arr,0,arr5,0,arr.length);
         System.arraycopy(arr,0,arr6,0,arr.length);
+        System.arraycopy(arr,0,arr7,0,arr.length);
         long t1 = System.currentTimeMillis();
-        CombSort.sort(arr1);
-        boolean r1 = Sort.checkOutAsc(arr1);
+        //CombSort.sort(arr1);
+        //boolean r1 = Sort.checkOutAsc(arr1);
         long t2 = System.currentTimeMillis();
         //BubbleSort.sort(arr2);
         //boolean r2 = Sort.checkOutAsc(arr2);
@@ -56,13 +58,16 @@ public class CombSort {
         QuickSort.sort(arr4);
         boolean r4 = Sort.checkOutAsc(arr4);
         long t5 = System.currentTimeMillis();
-        ShellSort.sort(arr5);
-        boolean r5 = Sort.checkOutAsc(arr5);
+        //ShellSort.sort(arr5);
+        //boolean r5 = Sort.checkOutAsc(arr5);
         long t6 = System.currentTimeMillis();
-        PyramidSort.sort(arr6);
-        boolean r6 = Sort.checkOutAsc(arr6);
+        //PyramidSort.sort(arr6);
+        //boolean r6 = Sort.checkOutAsc(arr6);
         long t7 = System.currentTimeMillis();
-        if (r1 && r4 && r5 && r6) {
+        MergeSort.sort(arr7);
+        boolean r7 = Sort.checkOutAsc(arr7);
+        long t8 = System.currentTimeMillis();
+        if (/*r1 &&*/ r4 && /*r5 && r6 &&*/ r7) {
             System.out.println("Elapsed time of copying arrays = " + (t1 - t0));
             System.out.println("Elapsed time of comb sort = " + (t2 - t1));
             System.out.println("Elapsed time of bubble sort = " + (t3 - t2));
@@ -70,6 +75,7 @@ public class CombSort {
             System.out.println("Elapsed time of quick sort = " + (t5 - t4));
             System.out.println("Elapsed time of shell sort = " + (t6 - t5));
             System.out.println("Elapsed time of pyramid sort = " + (t7 - t6));
+            System.out.println("Elapsed time of merge sort = " + (t8 - t7));
         }
     }
 
